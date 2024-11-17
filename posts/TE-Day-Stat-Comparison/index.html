@@ -147,6 +147,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <h1 class="title">Does TE Day have an affect on Tight Ends’ performance</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">NFL</div>
+                <div class="quarto-category">Fantasy Football</div>
+                <div class="quarto-category">Football</div>
               </div>
                   </div>
   </div>
@@ -188,9 +190,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message: FALSE</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|warning: FALSE</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|include: FALSE</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -259,7 +260,8 @@ dbl (12): Rank, REC, TGT, YDS, Y/R, LG, 20+, TD, G, FPTS, FPTS/G, Year
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>TEComparison <span class="ot">&lt;-</span> TEComparison <span class="sc">%&gt;%</span></span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Year, <span class="sc">-</span>Avg_TGT_per_Game) <span class="sc">%&gt;%</span></span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Player =</span> <span class="fu">factor</span>(Player, <span class="at">levels =</span> <span class="fu">unique</span>(Player)))</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#view(TEComparison)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#view(TEComparison)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#|include: FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>In today’s NFL, quarterbacks and star wide receivers often steal the show, leaving the crucial yet under appreciated work of tight ends in the shadows. Tight ends are asked to block like offensive linemen, catch passes like wide-outs, and adapt to every situation, yet their efforts frequently go unnoticed. That changed in 2018 when George Kittle and his fellow 49ers humorously introduced “National Tight Ends Day,” a celebration that has since become a widely recognized event in the league. But beyond the festivities and social media buzz, a question remains: Does the attention surrounding TE Day translate into heightened performance on the field? Do tight ends rise to the occasion when they’re celebrated, or is it all just hype?</p>

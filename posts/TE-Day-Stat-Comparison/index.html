@@ -188,10 +188,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message: FALSE</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|warning: FALSE</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|include: FALSE</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -261,12 +259,13 @@ dbl (12): Rank, REC, TGT, YDS, Y/R, LG, 20+, TD, G, FPTS, FPTS/G, Year
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Year, <span class="sc">-</span>Avg_TGT_per_Game) <span class="sc">%&gt;%</span></span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Player =</span> <span class="fu">factor</span>(Player, <span class="at">levels =</span> <span class="fu">unique</span>(Player)))</span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#view(TEComparison)</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#|include: FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#|include: FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>In today’s NFL, quarterbacks and star wide receivers often steal the show, leaving the crucial yet under appreciated work of tight ends in the shadows. Tight ends are asked to block like offensive linemen, catch passes like wide-outs, and adapt to every situation, yet their efforts frequently go unnoticed. That changed in 2018 when George Kittle and his fellow 49ers humorously introduced “National Tight Ends Day,” a celebration that has since become a widely recognized event in the league. But beyond the festivities and social media buzz, a question remains: Does the attention surrounding TE Day translate into heightened performance on the field? Do tight ends rise to the occasion when they’re celebrated, or is it all just hype?</p>
 <p>In this article, we break down the numbers—analyzing targets, receptions, and fantasy points from 2021 to 2024—to determine if TE Day truly impacts player performance or if it’s simply a fun distraction for fans.</p>
-<p>To set the stage for this analysis, let’s first examine how tight ends have performed on average during the regular season, before TE Day, over the past four years. The chart below, Average Targets and Receptions per Game (Season), provides a comprehensive view of the top tight ends’ usage, showcasing their average targets and receptions per game for each year from 2021 to 2024. By separating the data year by year, we can see how consistently these elite tight ends, averaging five or more targets per game, have been utilized in their respective offenses and identify any noticeable trends or shifts in performance.</p>
+<p>To set the stage for this analysis, let’s first examine how tight ends have performed on average during the regular season, before TE Day, over the past four years. The chart below, Average Targets and Receptions per Game (Before TE Day), provides a comprehensive view of the top tight ends’ usage, showcasing their average targets and receptions per game for each year from 2021 to 2024. By separating the data year by year, we can see how consistently these elite tight ends, averaging five or more targets per game, have been utilized in their respective offenses and identify any noticeable trends or shifts in performance.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -286,7 +285,7 @@ dbl (12): Rank, REC, TGT, YDS, Y/R, LG, 20+, TD, G, FPTS, FPTS/G, Year
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Averages Per Game"</span>, </span>
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Name"</span>, </span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Averages of the Top 10 Targeted Tight End"</span>, </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Targets and Receptions per Game (Before TE Day)"</span>, </span>
 <span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Comparing the top Tight End usage before TE Day"</span>, </span>
 <span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Fantasy Pros TE Statistics | By Mason Nordhausen"</span></span>
 <span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
@@ -451,7 +450,7 @@ dbl (12): Rank, REC, TGT, YDS, Y/R, LG, 20+, TD, G, FPTS, FPTS/G, Year
 </div>
 <p>In 2021 and 2022, a striking pattern emerges: a larger proportion of tight ends fell short of their season average in fantasy points on TE Day. This under performance is especially pronounced in 2021, where only one tight end managed to exceed their average fantasy output. This suggests that TE Day in these years did not provide the expected boost in production, even for some of the top-performing players.</p>
 <p>In contrast, the waffle charts for 2023 and 2024 paint a more favorable picture. More than half of the tight ends who averaged over five targets per game during the season were able to outperform their usual fantasy points on TE Day. This improvement suggests that teams may have started to use their tight ends more effectively in these years, particularly in high-value scenarios like red zone opportunities. In fact, 2024 saw a record-breaking number of touchdowns scored by tight ends , underscoring the strategic emphasis on these players. The consistent involvement of these key players allowed them to make a more significant impact and contribute to game-changing plays.</p>
-<p>Ultimately, while TE Day has shown the potential to boost fantasy performance for certain elite players, it remains unpredictable and varies from year to year. For fantasy football managers, this means TE Day can offer great upside, but it comes with inherent risk. The day continues to evolve, and as it does, it will be fascinating to see whether the trend toward consistent, high-impact performances continues or if the excitement remains more of a gamble. As the tradition grows, one thing is certain: tight ends will have their moment, and fans will be watching closely to see if it pays off.</p>
+<p>Ultimately, while TE Day has shown the potential to boost fantasy performance for certain elite players, it remains unpredictable and varies from year to year. For fantasy football managers, this means TE Day can offer great upside, but it comes with inherent risk.In the future it will be fascinating to see whether TE Day can have a consistent, high impact performances or if the excitement remains more of a gamble. As the tradition grows, one thing is certain: tight ends will have their moment, and fans will be watching closely to see if it pays off.</p>
 
 
 

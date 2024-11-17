@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>create_waffle_chart <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot4 <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  data_year <span class="ot">&lt;-</span> TEComparison <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Year <span class="sc">==</span> year)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  above_avg <span class="ot">&lt;-</span> <span class="fu">sum</span>(data_year<span class="sc">$</span>FPTS_day <span class="sc">&gt;</span> data_year<span class="sc">$</span><span class="st">`</span><span class="at">FPTS/G_avg</span><span class="st">`</span>)</span>
@@ -349,10 +349,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>waffle_2021 <span class="ot">&lt;-</span> <span class="fu">create_waffle_chart</span>(<span class="dv">2021</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>waffle_2022 <span class="ot">&lt;-</span> <span class="fu">create_waffle_chart</span>(<span class="dv">2022</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>waffle_2023 <span class="ot">&lt;-</span> <span class="fu">create_waffle_chart</span>(<span class="dv">2023</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>waffle_2024 <span class="ot">&lt;-</span> <span class="fu">create_waffle_chart</span>(<span class="dv">2024</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>waffle_2021 <span class="ot">&lt;-</span> <span class="fu">plot4</span>(<span class="dv">2021</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>waffle_2022 <span class="ot">&lt;-</span> <span class="fu">plot4</span>(<span class="dv">2022</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>waffle_2023 <span class="ot">&lt;-</span> <span class="fu">plot4</span>(<span class="dv">2023</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>waffle_2024 <span class="ot">&lt;-</span> <span class="fu">plot4</span>(<span class="dv">2024</span>)</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>waffle_combined <span class="ot">&lt;-</span> (waffle_2021 <span class="sc">+</span> waffle_2022) <span class="sc">/</span> (waffle_2023 <span class="sc">+</span> waffle_2024) <span class="sc">+</span></span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>

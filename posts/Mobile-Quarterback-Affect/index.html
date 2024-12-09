@@ -185,34 +185,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The NFL has changed so much over the past few years, and one thing I’ve noticed is how mobile quarterbacks have started to dominate the conversation. Players like Lamar Jackson, Jalen Hurts, and Josh Allen have brought a new level of excitement to the game, redefining what it means to be a quarterback. These players aren’t just throwing the ball—they’re running, creating plays with their legs, and adding a whole new dynamic to their teams’ offenses. But I started wondering: does all that mobility actually make a difference? Are teams with mobile quarterbacks really more successful, or is it just a flashy trend?</p>
-<p>To dig into this, I decided to categorize quarterbacks into two groups: Mobile QBs and Non-Mobile QBs. I used a simple rule—if a quarterback was in the top 50% of Rush Yards Per Game among all quarterbacks for a season, I classified them as “Mobile.” Everyone else went into the Non-Mobile group. I thought this approach would give me a clear way to see how rushing quarterbacks impact their teams compared to those who mostly stay in the pocket. I also only wanted players that played in 75% of the teams game so that way team stats are not affected by a backup playing for them (13 games)</p>
+<p>To dig into this, I decided to categorize quarterbacks into two groups: Mobile QBs and Non-Mobile QBs. I used a simple rule, if a quarterback was in the top half of Rush Yards Per Game among all quarterbacks for a season, I classified them as “Mobile.” Everyone else went into the Non-Mobile group. I thought this approach would give me a clear way to see how rushing quarterbacks impact their teams compared to those who mostly stay in the pocket. I also only wanted players that played in the majority of the team’s game so that way team stats are not affected by a backup playing for them (13 games)</p>
 <p>To get the data I needed, I turned to Pro Football Reference. I used different tables within the site to pull data on individual quarterback rushing stats, team offensive metrics like points per game (PPG) and total yards, red zone efficiency, and win-loss records. By combining all of this data, I created a single dataset that links quarterback rushing performance to team success. My goal was simple: find out if having a mobile quarterback leads to better offensive production and more wins.</p>
 <p>The first thing I wanted to look at was the relationship between quarterback rushing yards and key offensive metrics. My goal was to see if more rushing yards from the QB position correlated with a more productive offense. Below, I’ve put together a scatter plot showing how QB rushing yards connect to points per game, total yards per game, and red zone efficiency.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 57 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): Player, Team
-dbl (12): Rk, Age, G, GS, Att, Yds, TD, Y/A, Y/G, A/G, Fmb, Year
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 64 Columns: 19
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): Team, RedZone %
-dbl (17): G, Points Scored, Total Yards, Completions, Pass Attempts, Passing...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
 </div>
 </div>
 <p>First scatterplot shows almost no correlation between QB Rush Yards and how many Points Per Game (PPG) the offense scores. We can see around the 20-25 PPG is where most QBs fall into and both Mobile &amp; Non-Mobile QBs have a large portion in that range.</p>
@@ -329,6 +314,7 @@ dbl (17): G, Points Scored, Total Yards, Completions, Pass Attempts, Passing...
 <p>The chart highlights a significant distinction between Mobile and Non-Mobile QBs in terms of Win Percentage. Mobile QBs exhibit a much wider range of Win Percentages, from teams in a rebuilding phase to the very top performers. Notably, the top four QBs in terms of Win Percentage are all Mobile QBs, suggesting that elite mobility can translate into on-field success. While Non-Mobile QBs show more consistency and cluster closer together in terms of Win Percentage, their upper limit doesn’t seem to match that of their mobile counterparts.</p>
 <p>This supports the idea that while other factors, such as defense and supporting offensive players, contribute to team success, a great Mobile QB can be a game-changer. Teams with lower Win Percentages among Mobile QBs might reflect rebuilding situations, where teams are still constructing a roster to complement their quarterback’s skill set. This variability underscores the potential of Mobile QBs to elevate a team’s ceiling when paired with a strong supporting cast.</p>
 <p>While the advantages of Mobile QBs in areas like Win Percentage and Red Zone efficiency, their unique style of play introduces a layer of unpredictability—namely, turnovers. This raises a critical question: does their ability to create outweigh the risks they bring to possession security?</p>
+<p>It is important to note that by Turnovers in this graph it is including all fumbles (lost or recovered by the offense). Due to the fact that once that ball comes out it is a 50/50 chance for the offense to recover, which is a risk that needs accounted for/</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
